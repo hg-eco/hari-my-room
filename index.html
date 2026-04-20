@@ -11,24 +11,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,0..100;1,9..144,300..500,0..100&family=Inter:wght@300;400;500&family=Shippori+Mincho+B1:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #1a1033;
-    --bg-alt: #f5f0f7;
-    --bg-warm: #e5d8ea;
-    --ink: #2a1e45;
-    --ink-light: #f5f0f7;
-    --mute: #9a90a8;
-    --mute-dark: #4e4260;
+    --bg: #2a1f48;
+    --bg-alt: #faf6fc;
+    --bg-warm: #ede5f2;
+    --ink: #2a1f48;
+    --ink-light: #faf6fc;
+    --mute: #9890aa;
+    --mute-dark: #554b6a;
     --accent: #c9a961;
-    --accent-soft: #e5cfa0;
-    --lav: #c4a7e0;
-    --lav-deep: #6e5a9a;
+    --accent-soft: #e0c88c;
+    --lav: #d8c3eb;
+    --lav-deep: #8a75b5;
+    --hair: rgba(201, 169, 97, 0.3);
 
     --safe-t: env(safe-area-inset-top);
     --safe-b: env(safe-area-inset-bottom);
 
-    --pad-x: 20px;
-    --pad-y: 80px;
-    --radius: 16px;
+    --pad-x: 22px;
+    --pad-y: 110px;
+    --radius: 2px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: smooth; }
@@ -58,7 +59,7 @@
     color: var(--ink-light);
   }
   .topnav.scrolled {
-    background: rgba(10, 9, 8, 0.85);
+    background: rgba(42, 31, 72, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
@@ -95,11 +96,11 @@
   body.menu-open .fullmenu { opacity: 1; pointer-events: auto; }
   .fullmenu ul { list-style: none; }
   .fullmenu li {
-    border-top: 1px solid rgba(244, 239, 232, 0.15);
+    border-top: 1px solid rgba(250, 246, 252, 0.15);
     opacity: 0; transform: translateY(20px);
     transition: opacity 0.5s, transform 0.5s;
   }
-  .fullmenu li:last-child { border-bottom: 1px solid rgba(244, 239, 232, 0.15); }
+  .fullmenu li:last-child { border-bottom: 1px solid rgba(250, 246, 252, 0.15); }
   body.menu-open .fullmenu li { opacity: 1; transform: translateY(0); }
   body.menu-open .fullmenu li:nth-child(1) { transition-delay: 0.1s; }
   body.menu-open .fullmenu li:nth-child(2) { transition-delay: 0.18s; }
@@ -109,27 +110,28 @@
   body.menu-open .fullmenu li:nth-child(6) { transition-delay: 0.5s; }
   .fullmenu a {
     display: flex; align-items: baseline; justify-content: space-between;
-    padding: 20px 4px;
-    font-family: "Fraunces", serif; font-size: 32px;
-    font-variation-settings: "opsz" 96, "SOFT" 60;
-    letter-spacing: -0.01em;
+    padding: 22px 4px;
+    font-family: "Shippori Mincho B1", serif; font-size: 26px;
+    font-weight: 500; letter-spacing: 0.08em;
   }
   .fullmenu a .num {
-    font-size: 11px; letter-spacing: 0.3em; color: var(--accent-soft);
-    font-family: "Inter", sans-serif; text-transform: uppercase;
+    font-size: 10px; letter-spacing: 0.3em; color: var(--accent-soft);
+    font-family: "Shippori Mincho B1", serif; font-weight: 400;
   }
   .fullmenu-footer {
-    margin-top: auto; display: flex; flex-direction: column; gap: 16px;
-    font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
-    color: rgba(244, 239, 232, 0.6);
+    margin-top: auto; display: flex; flex-direction: column; gap: 18px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 12px; letter-spacing: 0.18em;
+    color: rgba(250, 246, 252, 0.6);
     opacity: 0; transition: opacity 0.5s 0.6s;
   }
   body.menu-open .fullmenu-footer { opacity: 1; }
   .fullmenu-footer .book-btn {
-    background: var(--accent-soft); color: var(--ink);
-    padding: 18px; border-radius: 999px;
-    text-align: center; font-family: "Fraunces", serif;
-    font-size: 16px; letter-spacing: 0.05em; text-transform: none;
+    background: transparent; color: var(--accent-soft);
+    border: 1px solid var(--accent-soft);
+    padding: 18px; border-radius: 2px;
+    text-align: center; font-family: "Shippori Mincho B1", serif;
+    font-size: 14px; letter-spacing: 0.22em;
   }
 
   /* ========= Hero ========= */
@@ -143,19 +145,23 @@
   .hero::before {
     content: ""; position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(201, 169, 97, 0.28), transparent 65%),
-      radial-gradient(ellipse 70% 50% at 10% 90%, rgba(196, 167, 224, 0.2), transparent 65%);
+      radial-gradient(ellipse 70% 50% at 80% 15%, rgba(201, 169, 97, 0.22), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 10% 85%, rgba(216, 195, 235, 0.22), transparent 65%),
+      radial-gradient(ellipse 100% 60% at 50% 120%, rgba(138, 117, 181, 0.35), transparent 70%);
     pointer-events: none;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 3px 3px; mix-blend-mode: overlay;
   }
   .hero-meta {
     position: relative; z-index: 2;
-    display: flex; justify-content: space-between; align-items: flex-start;
-    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: rgba(244, 239, 232, 0.55);
+    display: flex; justify-content: flex-end;
+    font-size: 10px; letter-spacing: 0.4em;
+    color: rgba(250, 246, 252, 0.55);
   }
-  .hero-meta .dot { color: var(--accent-soft); margin-right: 4px; }
-  .hero-meta > div { line-height: 1.8; }
-  .hero-meta > div:last-child { text-align: right; }
+  .hero-meta > div { line-height: 1.6; }
 
   .hero-main { position: relative; z-index: 2; margin: auto 0; }
   .hero-title {
@@ -180,27 +186,34 @@
   @keyframes slide-up { to { transform: translateY(0); } }
 
   .hero-sub {
-    margin-top: 40px;
+    margin-top: 48px;
     font-family: "Shippori Mincho B1", serif;
-    font-size: 15px; line-height: 2; color: rgba(244, 239, 232, 0.85);
+    font-size: 15px; line-height: 2.1; color: rgba(250, 246, 252, 0.88);
+    letter-spacing: 0.08em;
     opacity: 0; animation: fade-in 1s 0.9s forwards;
   }
   .hero-sub small {
-    display: block; margin-top: 12px;
-    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: rgba(244, 239, 232, 0.5); font-family: "Inter", sans-serif;
+    display: block; margin-top: 18px;
+    font-size: 10px; letter-spacing: 0.35em;
+    color: var(--accent-soft); font-family: "Shippori Mincho B1", serif;
+  }
+  .hero-sub small::before {
+    content: ""; display: inline-block; width: 24px; height: 1px;
+    background: var(--accent-soft); vertical-align: middle; margin-right: 12px;
+    opacity: 0.6;
   }
   @keyframes fade-in { to { opacity: 1; } }
 
   .hero-bottom {
     position: relative; z-index: 2;
     display: flex; justify-content: space-between; align-items: flex-end;
-    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: rgba(244, 239, 232, 0.4);
+    font-size: 10px; letter-spacing: 0.35em;
+    color: rgba(250, 246, 252, 0.42);
+    font-family: "Shippori Mincho B1", serif;
     opacity: 0; animation: fade-in 1s 1.2s forwards;
   }
   .scroll-ind { display: flex; align-items: center; gap: 10px; }
-  .scroll-line { width: 36px; height: 1px; background: rgba(244, 239, 232, 0.4); position: relative; overflow: hidden; }
+  .scroll-line { width: 36px; height: 1px; background: rgba(250, 246, 252, 0.4); position: relative; overflow: hidden; }
   .scroll-line::after {
     content: ""; position: absolute; inset: 0;
     background: var(--accent-soft);
@@ -214,18 +227,18 @@
   /* ========= Marquee ========= */
   .marquee {
     background: var(--bg); color: var(--ink-light);
-    padding: 18px 0; overflow: hidden; white-space: nowrap;
-    border-top: 1px solid rgba(244, 239, 232, 0.1);
+    padding: 22px 0; overflow: hidden; white-space: nowrap;
+    border-top: 1px solid rgba(224, 200, 140, 0.15);
+    border-bottom: 1px solid rgba(224, 200, 140, 0.15);
   }
   .marquee-track {
-    display: inline-flex; gap: 32px;
-    animation: marquee 24s linear infinite;
-    font-family: "Fraunces", serif; font-size: 20px;
-    font-variation-settings: "opsz" 48, "SOFT" 80;
-    letter-spacing: -0.02em;
+    display: inline-flex; gap: 40px;
+    animation: marquee 36s linear infinite;
+    font-family: "Shippori Mincho B1", serif; font-size: 14px;
+    letter-spacing: 0.3em; font-weight: 500;
   }
-  .marquee em { font-style: italic; color: var(--accent-soft); }
-  .marquee .dot { color: var(--accent-soft); }
+  .marquee em { font-style: normal; color: var(--accent-soft); letter-spacing: 0.35em; }
+  .marquee .dot { color: var(--accent); font-size: 10px; }
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
@@ -236,25 +249,24 @@
   .pad { padding: var(--pad-y) var(--pad-x); }
 
   .sec-num {
-    font-family: "Fraunces", serif; font-size: 11px;
-    letter-spacing: 0.25em; color: var(--mute);
-    margin-bottom: 24px; display: flex; align-items: center; gap: 10px;
-    text-transform: uppercase;
+    font-family: "Shippori Mincho B1", serif; font-size: 11px;
+    letter-spacing: 0.32em; color: var(--mute);
+    margin-bottom: 32px; display: flex; align-items: center; gap: 14px;
   }
   .sec-num::before {
-    content: ""; width: 28px; height: 1px; background: var(--mute);
+    content: ""; width: 48px; height: 1px; background: var(--accent);
   }
-  .sec-num em { font-style: italic; color: var(--accent); }
+  .sec-num em { font-style: normal; color: var(--accent); margin-right: -6px; }
 
   .sec-title {
-    font-family: "Fraunces", serif;
-    font-size: clamp(40px, 11vw, 56px);
-    line-height: 1; font-weight: 300;
-    letter-spacing: -0.03em;
-    font-variation-settings: "opsz" 144, "SOFT" 50;
-    margin-bottom: 40px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: clamp(36px, 9.5vw, 52px);
+    line-height: 1.35; font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 48px;
+    color: inherit;
   }
-  .sec-title em { font-style: italic; color: var(--accent); font-variation-settings: "opsz" 144, "SOFT" 100; }
+  .sec-title em { font-style: normal; color: var(--accent); font-weight: 400; }
 
   /* Reveal */
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s cubic-bezier(0.77, 0, 0.175, 1), transform 0.9s cubic-bezier(0.77, 0, 0.175, 1); }
@@ -267,137 +279,152 @@
   .concept-visual {
     aspect-ratio: 4 / 5; margin-bottom: 32px; border-radius: var(--radius); overflow: hidden;
     background:
-      radial-gradient(circle at 30% 20%, rgba(229, 207, 160, 0.55), transparent 55%),
-      linear-gradient(135deg, #c4a7e0 0%, #9b7cc8 50%, #5a3f8a 100%);
+      radial-gradient(circle at 30% 25%, rgba(224, 200, 140, 0.5), transparent 55%),
+      linear-gradient(135deg, #e5d4ee 0%, #c2a8dc 55%, #8a75b5 100%);
     position: relative;
   }
   .concept-visual::after {
     content: "其の一 / 客室"; position: absolute; bottom: 16px; left: 16px;
     font-family: "Fraunces", serif; font-size: 10px;
-    color: rgba(10, 9, 8, 0.55); letter-spacing: 0.25em;
+    color: rgba(42, 31, 72, 0.55); letter-spacing: 0.25em;
   }
   .concept-text {
     font-family: "Shippori Mincho B1", serif;
-    font-size: 15px; line-height: 2.1; color: var(--mute-dark);
+    font-size: 15px; line-height: 2.15; color: var(--mute-dark);
+    letter-spacing: 0.04em;
   }
-  .concept-text p + p { margin-top: 20px; }
+  .concept-text p + p { margin-top: 22px; }
   .concept-text .pull {
-    font-family: "Fraunces", serif; font-size: 26px; line-height: 1.45;
-    font-style: italic; color: var(--ink); margin: 28px 0;
-    font-variation-settings: "opsz" 72, "SOFT" 80;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 22px; font-weight: 500; line-height: 1.75;
+    color: var(--ink); margin: 36px 0;
+    letter-spacing: 0.05em;
+    padding-left: 18px; border-left: 1px solid var(--accent);
   }
-  .concept-text .pull em { color: var(--accent); font-style: italic; }
+  .concept-text .pull em { color: var(--accent); font-style: normal; }
 
   /* ========= Menu ========= */
   .menu { background: var(--bg); color: var(--ink-light); }
-  .menu .sec-num { color: rgba(244, 239, 232, 0.5); }
-  .menu .sec-num::before { background: rgba(244, 239, 232, 0.3); }
+  .menu .sec-num { color: rgba(250, 246, 252, 0.5); }
+  .menu .sec-num::before { background: rgba(250, 246, 252, 0.3); }
   .menu .sec-title em { color: var(--accent-soft); }
 
   .first-offer {
-    background: linear-gradient(140deg, #c9a961 0%, #6e5a9a 100%);
+    background: linear-gradient(155deg, rgba(224, 200, 140, 0.14) 0%, rgba(138, 117, 181, 0.18) 100%);
+    border: 1px solid rgba(224, 200, 140, 0.28);
     color: var(--ink-light); border-radius: var(--radius);
-    padding: 28px 24px; margin-bottom: 32px;
+    padding: 36px 26px; margin: 8px 0 44px;
     position: relative; overflow: hidden;
   }
+  .first-offer::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(circle at 80% 10%, rgba(224, 200, 140, 0.15), transparent 55%);
+  }
+  .first-offer > * { position: relative; }
   .first-offer-tag {
-    display: inline-block; background: var(--ink); color: var(--accent-soft);
-    padding: 5px 12px; border-radius: 999px;
-    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
-    margin-bottom: 20px; font-family: "Fraunces", serif;
+    display: inline-block; color: var(--accent-soft);
+    padding: 0; margin-bottom: 24px;
+    font-size: 10px; letter-spacing: 0.45em;
+    font-family: "Shippori Mincho B1", serif;
+  }
+  .first-offer-tag::before {
+    content: ""; display: inline-block; width: 20px; height: 1px;
+    background: var(--accent-soft); vertical-align: middle; margin-right: 10px;
   }
   .first-offer h3 {
-    font-family: "Fraunces", serif;
-    font-size: 28px; font-weight: 400; line-height: 1.2;
-    font-variation-settings: "opsz" 96, "SOFT" 80;
-    letter-spacing: -0.02em; margin-bottom: 6px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 26px; font-weight: 500; line-height: 1.35;
+    letter-spacing: 0.04em; margin-bottom: 8px;
+    color: var(--ink-light);
   }
   .first-offer .sub-jp {
     font-family: "Shippori Mincho B1", serif;
-    font-size: 13px; color: rgba(244, 239, 232, 0.85); margin-bottom: 24px;
+    font-size: 12px; color: rgba(250, 246, 252, 0.55);
+    letter-spacing: 0.12em; margin-bottom: 28px;
   }
   .first-offer .price-line {
-    display: flex; align-items: baseline; gap: 14px;
-    padding-top: 20px; border-top: 1px solid rgba(244, 239, 232, 0.25);
+    display: flex; align-items: baseline; gap: 10px;
+    padding-top: 24px; border-top: 1px solid rgba(224, 200, 140, 0.22);
   }
-  .first-offer .price-line del { color: rgba(244, 239, 232, 0.5); font-size: 14px; }
   .first-offer .price-line strong {
-    font-family: "Fraunces", serif; font-size: 44px; font-weight: 300;
-    font-variation-settings: "opsz" 96, "SOFT" 60;
-    letter-spacing: -0.02em; color: var(--ink-light);
+    font-family: "Fraunces", serif; font-size: 52px; font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 40;
+    letter-spacing: -0.03em; color: var(--accent-soft); line-height: 1;
   }
   .first-offer .price-line .yen {
-    font-size: 14px; letter-spacing: 0.1em; color: rgba(244, 239, 232, 0.7);
+    font-size: 18px; letter-spacing: 0.02em; color: rgba(224, 200, 140, 0.75);
+    font-family: "Fraunces", serif;
   }
   .first-offer .book-link {
     display: flex; align-items: center; justify-content: space-between;
-    margin-top: 20px; padding-top: 20px;
-    border-top: 1px solid rgba(244, 239, 232, 0.25);
-    font-family: "Fraunces", serif; font-size: 15px;
+    margin-top: 26px; padding-top: 22px;
+    border-top: 1px solid rgba(224, 200, 140, 0.22);
+    font-family: "Shippori Mincho B1", serif; font-size: 13px;
+    letter-spacing: 0.1em; color: var(--accent-soft);
   }
-  .first-offer .book-link .arrow { transition: transform 0.3s; }
+  .first-offer .book-link .arrow { transition: transform 0.3s; color: var(--accent-soft); }
   .first-offer:active .book-link .arrow { transform: translateX(4px); }
 
   .menu-card {
-    border-top: 1px solid rgba(244, 239, 232, 0.15);
-    padding: 28px 0;
-    display: grid; grid-template-columns: 36px 1fr auto; gap: 10px 16px;
+    border-top: 1px solid rgba(250, 246, 252, 0.12);
+    padding: 32px 0;
+    display: grid; grid-template-columns: 44px 1fr auto; gap: 10px 18px;
     grid-template-areas:
       "num title price"
-      ".   jp    jp"
       ".   desc  desc"
       ".   time  time";
     align-items: start;
   }
-  .menu-card:last-child { border-bottom: 1px solid rgba(244, 239, 232, 0.15); }
+  .menu-card:last-child { border-bottom: 1px solid rgba(250, 246, 252, 0.12); }
   .menu-card .num {
     grid-area: num;
-    font-family: "Fraunces", serif; font-size: 11px;
-    color: var(--accent-soft); letter-spacing: 0.15em;
-    padding-top: 8px;
+    font-family: "Shippori Mincho B1", serif; font-size: 10px;
+    color: var(--accent-soft); letter-spacing: 0.25em;
+    padding-top: 10px;
   }
   .menu-card .title {
     grid-area: title;
-    font-family: "Fraunces", serif; font-size: 22px; font-weight: 400;
-    font-variation-settings: "opsz" 72, "SOFT" 60;
-    letter-spacing: -0.01em; line-height: 1.2;
-  }
-  .menu-card .jp-sub {
-    grid-area: jp;
-    font-family: "Shippori Mincho B1", serif; font-size: 12px;
-    color: rgba(244, 239, 232, 0.55); letter-spacing: 0.05em;
-    margin-top: -2px;
+    font-family: "Shippori Mincho B1", serif; font-size: 18px; font-weight: 500;
+    letter-spacing: 0.04em; line-height: 1.35;
+    color: var(--ink-light);
   }
   .menu-card .desc {
     grid-area: desc;
-    font-size: 13px; line-height: 1.75;
-    color: rgba(244, 239, 232, 0.65); margin-top: 6px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 12.5px; line-height: 1.85;
+    color: rgba(250, 246, 252, 0.55); margin-top: 10px;
+    letter-spacing: 0.03em;
   }
   .menu-card .time {
     grid-area: time;
-    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
-    color: rgba(244, 239, 232, 0.5); margin-top: 6px;
+    font-size: 10px; letter-spacing: 0.3em;
+    color: var(--accent-soft); margin-top: 10px;
+    font-family: "Fraunces", serif;
   }
   .menu-card .price {
     grid-area: price;
-    font-family: "Fraunces", serif; font-size: 19px; text-align: right;
-    font-variation-settings: "opsz" 48, "SOFT" 60;
-    white-space: nowrap; padding-top: 2px;
+    font-family: "Fraunces", serif; font-size: 20px; font-weight: 400;
+    text-align: right; color: var(--ink-light);
+    font-variation-settings: "opsz" 48, "SOFT" 50;
+    white-space: nowrap; padding-top: 4px; letter-spacing: -0.01em;
   }
   .menu-group-label {
-    margin-top: 36px;
-    font-family: "Fraunces", serif; font-size: 12px;
-    font-variation-settings: "opsz" 48, "SOFT" 60;
-    letter-spacing: 0.35em; text-transform: uppercase;
+    margin-top: 56px;
+    font-family: "Shippori Mincho B1", serif; font-size: 11px;
+    letter-spacing: 0.45em;
     color: var(--accent-soft);
-    padding-bottom: 4px;
+    padding-bottom: 10px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .menu-group-label::before {
+    content: ""; width: 40px; height: 1px; background: var(--accent-soft);
   }
   .menu-note {
-    margin-top: 28px;
+    margin-top: 32px;
     font-family: "Shippori Mincho B1", serif;
-    font-size: 12px; line-height: 1.85;
-    color: rgba(245, 240, 247, 0.55);
-    letter-spacing: 0.03em;
+    font-size: 12px; line-height: 2;
+    color: rgba(250, 246, 252, 0.55);
+    letter-spacing: 0.05em;
   }
 
   /* ========= Ritual ========= */
@@ -405,84 +432,88 @@
   .ritual-visual {
     aspect-ratio: 4 / 5; margin-bottom: 40px; border-radius: var(--radius); overflow: hidden;
     background:
-      radial-gradient(circle at 70% 30%, rgba(245, 240, 247, 0.85), transparent 55%),
-      linear-gradient(135deg, #e5d8ea 0%, #b8a6d4 55%, #6e5a9a 100%);
+      radial-gradient(circle at 75% 25%, rgba(250, 246, 252, 0.9), transparent 55%),
+      linear-gradient(135deg, #f2e9f6 0%, #d4bfe8 50%, #a48fc4 100%);
     position: relative;
   }
   .ritual-visual::after {
     content: "其の二 / 流れ"; position: absolute; bottom: 16px; left: 16px;
     font-family: "Fraunces", serif; font-size: 10px;
-    color: rgba(10, 9, 8, 0.55); letter-spacing: 0.25em;
+    color: rgba(42, 31, 72, 0.55); letter-spacing: 0.25em;
   }
   .ritual-step {
-    padding: 28px 0; border-top: 1px solid rgba(10, 9, 8, 0.12);
+    padding: 36px 0; border-top: 1px solid rgba(42, 31, 72, 0.12);
   }
-  .ritual-step:last-child { border-bottom: 1px solid rgba(10, 9, 8, 0.12); }
+  .ritual-step:last-child { border-bottom: 1px solid rgba(42, 31, 72, 0.12); }
   .ritual-step .step-num {
-    font-family: "Fraunces", serif; font-size: 11px;
-    color: var(--accent); letter-spacing: 0.3em;
-    margin-bottom: 12px; text-transform: uppercase;
+    font-family: "Shippori Mincho B1", serif; font-size: 11px;
+    color: var(--accent); letter-spacing: 0.32em;
+    margin-bottom: 16px;
   }
-  .ritual-step .step-num em { font-style: italic; }
+  .ritual-step .step-num em { font-style: normal; margin-right: 4px; }
   .ritual-step h4 {
-    font-family: "Fraunces", serif;
-    font-size: 26px; font-weight: 400; letter-spacing: -0.02em;
-    font-variation-settings: "opsz" 72, "SOFT" 80;
-    line-height: 1.2; margin-bottom: 6px;
-  }
-  .ritual-step .jp-sub {
     font-family: "Shippori Mincho B1", serif;
-    font-size: 12px; color: var(--mute); margin-bottom: 14px; letter-spacing: 0.05em;
+    font-size: 22px; font-weight: 500; letter-spacing: 0.06em;
+    line-height: 1.5; margin-bottom: 16px;
+    color: var(--ink);
   }
-  .ritual-step p { font-size: 13.5px; color: var(--mute-dark); line-height: 1.8; }
+  .ritual-step p {
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 13.5px; color: var(--mute-dark); line-height: 2;
+    letter-spacing: 0.04em;
+  }
 
   /* ========= Director ========= */
   .director { background: var(--bg-alt); }
   .director-visual {
     aspect-ratio: 4 / 5; margin-bottom: 40px; border-radius: var(--radius); overflow: hidden;
     background:
-      radial-gradient(circle at 50% 30%, rgba(229, 207, 160, 0.38), transparent 60%),
-      linear-gradient(180deg, #6e5a9a 0%, #3f2f5f 70%, #1a1033 100%);
+      radial-gradient(circle at 50% 25%, rgba(224, 200, 140, 0.35), transparent 60%),
+      linear-gradient(180deg, #a48fc4 0%, #554b6a 65%, #2a1f48 100%);
     position: relative;
   }
   .director-visual::after {
     content: "其の三 / 院長"; position: absolute; bottom: 16px; left: 16px;
     font-family: "Fraunces", serif; font-size: 10px;
-    color: rgba(244, 239, 232, 0.65); letter-spacing: 0.25em;
+    color: rgba(250, 246, 252, 0.65); letter-spacing: 0.25em;
   }
   .director-quote {
-    font-family: "Fraunces", serif;
-    font-size: 28px; font-weight: 300; font-style: italic;
-    line-height: 1.45; letter-spacing: -0.02em;
-    font-variation-settings: "opsz" 96, "SOFT" 100;
-    margin-bottom: 32px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 24px; font-weight: 500;
+    line-height: 1.75; letter-spacing: 0.06em;
+    margin-bottom: 40px; color: var(--ink);
+    padding-left: 20px; border-left: 1px solid var(--accent);
   }
-  .director-quote em { color: var(--accent); }
+  .director-quote em { color: var(--accent); font-style: normal; }
   .director-name {
-    font-family: "Fraunces", serif; font-size: 24px; font-weight: 400;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 22px; font-weight: 500; letter-spacing: 0.08em;
     margin-bottom: 4px;
   }
   .director-name small {
     display: block; font-size: 10px; letter-spacing: 0.3em;
-    color: var(--mute); margin-top: 6px; text-transform: uppercase;
+    color: var(--accent); margin-top: 10px;
+    font-family: "Shippori Mincho B1", serif; font-weight: 400;
   }
   .director-bio {
     font-family: "Shippori Mincho B1", serif;
-    font-size: 14px; line-height: 2; color: var(--mute-dark);
-    margin-top: 20px;
+    font-size: 14px; line-height: 2.1; color: var(--mute-dark);
+    margin-top: 24px; letter-spacing: 0.04em;
   }
   .director-creds {
-    display: flex; gap: 6px; flex-wrap: wrap; margin-top: 24px;
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px;
   }
   .cred {
-    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-    border: 1px solid var(--ink); padding: 5px 10px; border-radius: 999px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 10px; letter-spacing: 0.22em;
+    border: 1px solid rgba(201, 169, 97, 0.5); color: var(--mute-dark);
+    padding: 7px 14px; border-radius: 2px;
   }
 
   /* ========= Gallery ========= */
   .gallery { background: var(--bg); color: var(--ink-light); padding: 60px 0; }
-  .gallery .sec-num { padding: 0 var(--pad-x); color: rgba(244, 239, 232, 0.5); }
-  .gallery .sec-num::before { background: rgba(244, 239, 232, 0.3); }
+  .gallery .sec-num { padding: 0 var(--pad-x); color: rgba(250, 246, 252, 0.5); }
+  .gallery .sec-num::before { background: rgba(250, 246, 252, 0.3); }
   .gallery h2 { padding: 0 var(--pad-x); margin-bottom: 32px; }
   .gallery-scroll {
     display: flex; gap: 12px; overflow-x: auto; padding: 0 var(--pad-x);
@@ -497,17 +528,17 @@
   .gallery-item::after {
     content: attr(data-label); position: absolute; bottom: 16px; left: 16px;
     font-family: "Fraunces", serif; font-size: 10px;
-    color: rgba(244, 239, 232, 0.7); letter-spacing: 0.25em;
+    color: rgba(250, 246, 252, 0.7); letter-spacing: 0.25em;
   }
-  .g1 { background: radial-gradient(circle at 30% 40%, #e5cfa0, #6e5a9a 70%); }
-  .g2 { background: linear-gradient(135deg, #3f2f5f, #1a1033); }
-  .g3 { background: radial-gradient(circle at 70% 20%, #e5d8ea, #9a90a8 80%); }
-  .g4 { background: linear-gradient(210deg, #c9a961 0%, #3f2f5f 80%); }
-  .g5 { background: radial-gradient(ellipse at 40% 60%, #c4a7e0, #3f2f5f); }
-  .g6 { background: linear-gradient(45deg, #1a1033, #c9a961); }
+  .g1 { background: radial-gradient(circle at 30% 40%, #e0c88c, #8a75b5 70%); }
+  .g2 { background: linear-gradient(135deg, #554b6a, #2a1f48); }
+  .g3 { background: radial-gradient(circle at 70% 20%, #f2e9f6, #a48fc4 80%); }
+  .g4 { background: linear-gradient(210deg, #e0c88c 0%, #554b6a 85%); }
+  .g5 { background: radial-gradient(ellipse at 40% 60%, #d8c3eb, #554b6a); }
+  .g6 { background: linear-gradient(45deg, #2a1f48, #c9a961); }
   .gallery-hint {
     text-align: center; font-size: 10px; letter-spacing: 0.3em;
-    color: rgba(244, 239, 232, 0.4); margin-top: 20px;
+    color: rgba(250, 246, 252, 0.4); margin-top: 20px;
     text-transform: uppercase;
   }
 
@@ -515,25 +546,29 @@
   .info { background: var(--bg-alt); }
   .info-block + .info-block { margin-top: 56px; }
   .info-block h3 {
-    font-family: "Fraunces", serif;
-    font-size: 28px; font-weight: 400; margin-bottom: 24px;
-    font-variation-settings: "opsz" 72, "SOFT" 60;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 22px; font-weight: 500; margin-bottom: 28px;
+    letter-spacing: 0.1em;
   }
   .info-list { font-size: 14px; }
   .info-list .row {
     display: grid; grid-template-columns: 80px 1fr; gap: 16px;
-    padding: 16px 0; border-top: 1px solid rgba(10, 9, 8, 0.1);
+    padding: 16px 0; border-top: 1px solid rgba(42, 31, 72, 0.1);
   }
-  .info-list .row:last-child { border-bottom: 1px solid rgba(10, 9, 8, 0.1); }
+  .info-list .row:last-child { border-bottom: 1px solid rgba(42, 31, 72, 0.1); }
   .info-list .label {
-    color: var(--mute); font-size: 10px; letter-spacing: 0.2em;
-    text-transform: uppercase; padding-top: 3px;
+    color: var(--accent); font-size: 11px; letter-spacing: 0.25em;
+    padding-top: 3px; font-family: "Shippori Mincho B1", serif;
   }
-  .info-list .value { color: var(--mute-dark); font-size: 14px; line-height: 1.7; }
+  .info-list .value {
+    color: var(--mute-dark); font-size: 14px; line-height: 1.8;
+    font-family: "Shippori Mincho B1", serif; letter-spacing: 0.03em;
+  }
 
   .hours-grid {
-    margin-top: 14px; display: grid; grid-template-columns: repeat(7, 1fr);
-    gap: 1px; background: rgba(10, 9, 8, 0.1); border-radius: 10px; overflow: hidden;
+    margin-top: 18px; display: grid; grid-template-columns: repeat(7, 1fr);
+    gap: 1px; background: rgba(201, 169, 97, 0.22); border-radius: 2px; overflow: hidden;
+    border: 1px solid rgba(201, 169, 97, 0.22);
   }
   .hours-grid div {
     background: var(--bg-alt); padding: 10px 2px; text-align: center;
@@ -552,8 +587,8 @@
     text-transform: uppercase; margin-top: 10px;
   }
 
-  .faq-item { border-top: 1px solid rgba(10, 9, 8, 0.1); }
-  .faq-item:last-child { border-bottom: 1px solid rgba(10, 9, 8, 0.1); }
+  .faq-item { border-top: 1px solid rgba(42, 31, 72, 0.1); }
+  .faq-item:last-child { border-bottom: 1px solid rgba(42, 31, 72, 0.1); }
   .faq-q {
     width: 100%; text-align: left; padding: 18px 0;
     display: flex; align-items: flex-start; gap: 14px;
@@ -561,8 +596,9 @@
     font-family: "Shippori Mincho B1", serif;
   }
   .faq-q .qmark {
-    font-family: "Fraunces", serif; font-style: italic;
-    color: var(--accent); font-size: 16px; flex-shrink: 0; padding-top: 1px;
+    font-family: "Shippori Mincho B1", serif;
+    color: var(--accent); font-size: 14px; flex-shrink: 0; padding-top: 2px;
+    letter-spacing: 0.05em;
   }
   .faq-q .qtext { flex: 1; }
   .faq-q .toggle {
@@ -585,44 +621,56 @@
   .cta::before {
     content: ""; position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201, 169, 97, 0.28), transparent 65%),
-      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(196, 167, 224, 0.2), transparent 70%);
+      radial-gradient(ellipse 55% 45% at 50% 50%, rgba(201, 169, 97, 0.22), transparent 65%),
+      radial-gradient(ellipse 90% 55% at 50% 110%, rgba(216, 195, 235, 0.25), transparent 70%);
+  }
+  .cta::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 3px 3px; mix-blend-mode: overlay;
   }
   .cta-label {
-    font-size: 10px; letter-spacing: 0.3em; color: var(--accent-soft);
-    text-transform: uppercase; margin-bottom: 24px; position: relative;
+    font-size: 10px; letter-spacing: 0.45em; color: var(--accent-soft);
+    margin-bottom: 28px; position: relative;
+    font-family: "Shippori Mincho B1", serif;
+  }
+  .cta-label::before, .cta-label::after {
+    content: ""; display: inline-block; width: 20px; height: 1px;
+    background: var(--accent-soft); vertical-align: middle;
+    margin: 0 14px; opacity: 0.6;
   }
   .cta h2 {
-    font-family: "Fraunces", serif;
-    font-size: clamp(44px, 13vw, 72px); font-weight: 300;
-    line-height: 0.95; letter-spacing: -0.04em;
-    font-variation-settings: "opsz" 144, "SOFT" 60;
-    margin-bottom: 32px; position: relative;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: clamp(42px, 12vw, 68px); font-weight: 500;
+    line-height: 1.35; letter-spacing: 0.02em;
+    margin-bottom: 40px; position: relative;
   }
   .cta h2 em {
-    font-style: italic; color: var(--accent-soft);
-    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-style: normal; color: var(--accent-soft); font-weight: 400;
   }
   .cta .cta-sub {
     font-family: "Shippori Mincho B1", serif;
-    font-size: 13px; color: rgba(244, 239, 232, 0.7);
-    margin-bottom: 36px; position: relative; line-height: 2;
+    font-size: 13px; color: rgba(250, 246, 252, 0.65);
+    margin-bottom: 44px; position: relative; line-height: 2.2;
+    letter-spacing: 0.08em;
   }
   .cta-btn {
     display: inline-flex; align-items: center; gap: 14px;
-    font-family: "Fraunces", serif; font-size: 17px;
-    font-variation-settings: "opsz" 48, "SOFT" 80;
-    padding: 18px 36px; border: 1px solid rgba(244, 239, 232, 0.3);
-    border-radius: 999px; position: relative;
+    font-family: "Shippori Mincho B1", serif; font-size: 14px; font-weight: 500;
+    letter-spacing: 0.2em;
+    padding: 20px 40px; border: 1px solid var(--accent-soft);
+    color: var(--accent-soft); position: relative;
     transition: background 0.3s, color 0.3s, border-color 0.3s;
   }
-  .cta-btn:active { background: var(--ink-light); color: var(--ink); border-color: var(--ink-light); }
+  .cta-btn span { transition: transform 0.3s; }
+  .cta-btn:active { background: var(--accent-soft); color: var(--ink); }
+  .cta-btn:active span { transform: translateX(4px); }
 
   /* ========= Footer ========= */
   footer {
-    background: var(--bg); color: rgba(244, 239, 232, 0.5);
+    background: var(--bg); color: rgba(250, 246, 252, 0.5);
     padding: 60px 24px 40px;
-    border-top: 1px solid rgba(244, 239, 232, 0.1);
+    border-top: 1px solid rgba(250, 246, 252, 0.1);
     font-size: 12px;
   }
   .footer-brand {
@@ -631,51 +679,62 @@
     font-variation-settings: "opsz" 72, "SOFT" 80;
     letter-spacing: 0.05em;
   }
-  footer .tagline { line-height: 1.9; max-width: 300px; margin-bottom: 40px; }
+  footer .tagline {
+    font-family: "Shippori Mincho B1", serif;
+    line-height: 2.1; max-width: 320px; margin-bottom: 48px;
+    letter-spacing: 0.05em; color: rgba(250, 246, 252, 0.65);
+  }
   .footer-cols {
     display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
     padding-bottom: 40px;
   }
   footer h5 {
-    color: var(--ink-light); font-size: 10px; letter-spacing: 0.25em;
-    margin-bottom: 14px; text-transform: uppercase; font-weight: 400;
+    color: var(--accent-soft); font-size: 10px; letter-spacing: 0.3em;
+    margin-bottom: 18px; font-weight: 400;
+    font-family: "Shippori Mincho B1", serif;
   }
   footer ul { list-style: none; }
   footer li { margin-bottom: 10px; letter-spacing: 0.05em; font-size: 12px; }
   .footer-bottom {
-    border-top: 1px solid rgba(244, 239, 232, 0.1);
+    border-top: 1px solid rgba(250, 246, 252, 0.1);
     padding-top: 24px; display: flex; flex-direction: column; gap: 8px;
     text-align: center;
     letter-spacing: 0.2em; text-transform: uppercase; font-size: 9px;
-    color: rgba(244, 239, 232, 0.3);
+    color: rgba(250, 246, 252, 0.3);
   }
 
   /* ========= Sticky CTA ========= */
   .sticky-cta {
     position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
-    background: rgba(10, 9, 8, 0.92); backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 14px 16px calc(14px + var(--safe-b));
-    border-top: 1px solid rgba(244, 239, 232, 0.08);
-    display: flex; align-items: center; gap: 12px;
+    background: rgba(42, 31, 72, 0.92); backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 14px 18px calc(14px + var(--safe-b));
+    border-top: 1px solid rgba(224, 200, 140, 0.18);
+    display: flex; align-items: center; gap: 14px;
   }
   .sticky-cta .info-small {
-    flex: 1; color: rgba(244, 239, 232, 0.8);
-    font-family: "Fraunces", serif; font-size: 13px;
-    line-height: 1.3;
+    flex: 1; color: var(--ink-light); line-height: 1.15;
   }
+  .sticky-cta .info-small strong {
+    display: block;
+    font-family: "Fraunces", serif; font-weight: 400;
+    font-size: 22px; letter-spacing: -0.01em;
+    font-variation-settings: "opsz" 72, "SOFT" 70;
+    color: var(--accent-soft);
+  }
+  .sticky-cta .info-small strong .yen-small { font-size: 14px; color: rgba(224, 200, 140, 0.7); }
   .sticky-cta .info-small small {
-    display: block; font-size: 10px; color: rgba(244, 239, 232, 0.5);
-    letter-spacing: 0.2em; text-transform: uppercase;
-    font-family: "Inter", sans-serif; margin-top: 2px;
+    display: block; font-size: 10px; color: rgba(250, 246, 252, 0.55);
+    letter-spacing: 0.22em; font-family: "Shippori Mincho B1", serif;
+    margin-top: 4px;
   }
   .sticky-cta .book {
     background: var(--accent-soft); color: var(--ink);
-    font-family: "Fraunces", serif; font-size: 14px;
-    padding: 14px 24px; border-radius: 999px;
+    font-family: "Fraunces", serif; font-size: 13px; font-weight: 500;
+    padding: 14px 22px; border-radius: 2px;
     display: inline-flex; align-items: center; gap: 8px;
-    white-space: nowrap;
-    font-variation-settings: "opsz" 48, "SOFT" 80;
+    white-space: nowrap; letter-spacing: 0.08em;
+    font-variation-settings: "opsz" 48, "SOFT" 70;
   }
 
   /* Desktop enhancements (optional) */
@@ -714,15 +773,14 @@
   </ul>
   <div class="fullmenu-footer">
     <div>神奈川・中央林間<br/>月-木 9:00-18:00／金-日 9:00-21:00</div>
-    <a href="https://beauty.hotpepper.jp/kr/slnH000593438/" target="_blank" rel="noopener" class="book-btn" data-close>ご予約はこちら →</a>
+    <a href="#" class="book-btn" data-close data-line-book>LINE でご予約 →</a>
   </div>
 </div>
 
 <!-- Hero -->
 <section class="hero">
   <div class="hero-meta">
-    <div><span class="dot">✦</span>第 001 号<br/>完全個室サロン</div>
-    <div>神奈川<br/>中央林間</div>
+    <div>神奈川 ─ 中央林間</div>
   </div>
 
   <div class="hero-main">
@@ -783,8 +841,8 @@
       <span class="yen">￥</span>
       <strong>5,500</strong>
     </div>
-    <a href="https://beauty.hotpepper.jp/kr/slnH000593438/" target="_blank" rel="noopener" class="book-link">
-      <span>このコースを予約する</span>
+    <a href="#" class="book-link" data-line-book>
+      <span>LINE でこのコースを予約</span>
       <span class="arrow">→</span>
     </a>
   </div>
@@ -965,10 +1023,10 @@
 
 <!-- CTA -->
 <section class="cta" id="cta">
-  <div class="cta-label">✦ ご予約</div>
-  <h2>あなたの部屋で、<br/><em>お待ちしています。</em></h2>
-  <p class="cta-sub">初めての方は、<br/>美容鍼ベーシック（￥5,500／30分）からどうぞ。</p>
-  <a href="https://beauty.hotpepper.jp/kr/slnH000593438/" target="_blank" rel="noopener" class="cta-btn">予約する <span>→</span></a>
+  <div class="cta-label">ご予約</div>
+  <h2>あなただけの、<br/><em>部屋へ。</em></h2>
+  <p class="cta-sub">初めての方は、美容鍼ベーシック<br/>￥5,500 ／ 30分 からどうぞ。</p>
+  <a href="#" class="cta-btn" data-line-book>LINE で予約 <span>→</span></a>
 </section>
 
 <!-- Footer -->
@@ -1000,9 +1058,12 @@
 </footer>
 
 <!-- Sticky CTA -->
-<a href="https://beauty.hotpepper.jp/kr/slnH000593438/" target="_blank" rel="noopener" class="sticky-cta">
-  <div class="info-small">お部屋をご用意しています<small>美容鍼 ￥5,500〜</small></div>
-  <span class="book">予約 →</span>
+<a href="#" class="sticky-cta" data-line-book>
+  <div class="info-small">
+    <strong>美容鍼 ￥5,500<span class="yen-small">〜</span></strong>
+    <small>30分・初回歓迎</small>
+  </div>
+  <span class="book">LINE 予約 →</span>
 </a>
 
 <script>
