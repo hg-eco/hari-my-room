@@ -3,23 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#0a0908" />
-<title>HARI MY ROOM | Private Acupuncture Salon, Tokyo</title>
-<meta name="description" content="HARI MY ROOM ─ 東京のプライベート美容鍼サロン。完全個室・完全予約制。あなただけの時間と空間で、肌と心を整える。" />
+<meta name="theme-color" content="#1a1033" />
+<title>HARI MY ROOM | ハリマイルーム ─ 中央林間の完全個室・美容鍼サロン</title>
+<meta name="description" content="HARI MY ROOM（ハリマイルーム）─ 神奈川・中央林間のプライベート美容鍼サロン。完全個室・完全予約制。美容鍼 ¥5,500〜／初診料なし。" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,0..100;1,9..144,300..500,0..100&family=Inter:wght@300;400;500&family=Shippori+Mincho+B1:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #0a0908;
-    --bg-alt: #f4efe8;
-    --bg-warm: #ebe3d6;
-    --ink: #0a0908;
-    --ink-light: #f4efe8;
-    --mute: #8a8278;
-    --mute-dark: #423c33;
-    --accent: #b8896b;
-    --accent-soft: #d9b694;
+    --bg: #1a1033;
+    --bg-alt: #f5f0f7;
+    --bg-warm: #e5d8ea;
+    --ink: #2a1e45;
+    --ink-light: #f5f0f7;
+    --mute: #9a90a8;
+    --mute-dark: #4e4260;
+    --accent: #c9a961;
+    --accent-soft: #e5cfa0;
+    --lav: #c4a7e0;
+    --lav-deep: #6e5a9a;
 
     --safe-t: env(safe-area-inset-top);
     --safe-b: env(safe-area-inset-bottom);
@@ -141,8 +143,8 @@
   .hero::before {
     content: ""; position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(184, 137, 107, 0.3), transparent 65%),
-      radial-gradient(ellipse 70% 50% at 10% 90%, rgba(217, 182, 148, 0.15), transparent 65%);
+      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(201, 169, 97, 0.28), transparent 65%),
+      radial-gradient(ellipse 70% 50% at 10% 90%, rgba(196, 167, 224, 0.2), transparent 65%);
     pointer-events: none;
   }
   .hero-meta {
@@ -265,8 +267,8 @@
   .concept-visual {
     aspect-ratio: 4 / 5; margin-bottom: 32px; border-radius: var(--radius); overflow: hidden;
     background:
-      radial-gradient(circle at 30% 20%, rgba(217, 182, 148, 0.5), transparent 55%),
-      linear-gradient(135deg, #d9b694 0%, #b8896b 50%, #8a6347 100%);
+      radial-gradient(circle at 30% 20%, rgba(229, 207, 160, 0.55), transparent 55%),
+      linear-gradient(135deg, #c4a7e0 0%, #9b7cc8 50%, #5a3f8a 100%);
     position: relative;
   }
   .concept-visual::after {
@@ -293,7 +295,7 @@
   .menu .sec-title em { color: var(--accent-soft); }
 
   .first-offer {
-    background: linear-gradient(140deg, var(--accent) 0%, #8a6347 100%);
+    background: linear-gradient(140deg, #c9a961 0%, #6e5a9a 100%);
     color: var(--ink-light); border-radius: var(--radius);
     padding: 28px 24px; margin-bottom: 32px;
     position: relative; overflow: hidden;
@@ -382,14 +384,29 @@
     font-variation-settings: "opsz" 48, "SOFT" 60;
     white-space: nowrap; padding-top: 2px;
   }
+  .menu-group-label {
+    margin-top: 36px;
+    font-family: "Fraunces", serif; font-size: 12px;
+    font-variation-settings: "opsz" 48, "SOFT" 60;
+    letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--accent-soft);
+    padding-bottom: 4px;
+  }
+  .menu-note {
+    margin-top: 28px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 12px; line-height: 1.85;
+    color: rgba(245, 240, 247, 0.55);
+    letter-spacing: 0.03em;
+  }
 
   /* ========= Ritual ========= */
   .ritual { background: var(--bg-warm); }
   .ritual-visual {
     aspect-ratio: 4 / 5; margin-bottom: 40px; border-radius: var(--radius); overflow: hidden;
     background:
-      radial-gradient(circle at 70% 30%, rgba(244, 239, 232, 0.8), transparent 55%),
-      linear-gradient(135deg, #ebe3d6 0%, #c4a57b 60%, #8a6347 100%);
+      radial-gradient(circle at 70% 30%, rgba(245, 240, 247, 0.85), transparent 55%),
+      linear-gradient(135deg, #e5d8ea 0%, #b8a6d4 55%, #6e5a9a 100%);
     position: relative;
   }
   .ritual-visual::after {
@@ -424,8 +441,8 @@
   .director-visual {
     aspect-ratio: 4 / 5; margin-bottom: 40px; border-radius: var(--radius); overflow: hidden;
     background:
-      radial-gradient(circle at 50% 30%, rgba(217, 182, 148, 0.35), transparent 60%),
-      linear-gradient(180deg, #8a6347 0%, #423c33 80%, #0a0908 100%);
+      radial-gradient(circle at 50% 30%, rgba(229, 207, 160, 0.38), transparent 60%),
+      linear-gradient(180deg, #6e5a9a 0%, #3f2f5f 70%, #1a1033 100%);
     position: relative;
   }
   .director-visual::after {
@@ -482,12 +499,12 @@
     font-family: "Fraunces", serif; font-size: 10px;
     color: rgba(244, 239, 232, 0.7); letter-spacing: 0.25em;
   }
-  .g1 { background: radial-gradient(circle at 30% 40%, #d9b694, #8a6347 70%); }
-  .g2 { background: linear-gradient(135deg, #423c33, #0a0908); }
-  .g3 { background: radial-gradient(circle at 70% 20%, #ebe3d6, #8a8278 80%); }
-  .g4 { background: linear-gradient(210deg, #b8896b 0%, #423c33 80%); }
-  .g5 { background: radial-gradient(ellipse at 40% 60%, #d9b694, #423c33); }
-  .g6 { background: linear-gradient(45deg, #0a0908, #8a6347); }
+  .g1 { background: radial-gradient(circle at 30% 40%, #e5cfa0, #6e5a9a 70%); }
+  .g2 { background: linear-gradient(135deg, #3f2f5f, #1a1033); }
+  .g3 { background: radial-gradient(circle at 70% 20%, #e5d8ea, #9a90a8 80%); }
+  .g4 { background: linear-gradient(210deg, #c9a961 0%, #3f2f5f 80%); }
+  .g5 { background: radial-gradient(ellipse at 40% 60%, #c4a7e0, #3f2f5f); }
+  .g6 { background: linear-gradient(45deg, #1a1033, #c9a961); }
   .gallery-hint {
     text-align: center; font-size: 10px; letter-spacing: 0.3em;
     color: rgba(244, 239, 232, 0.4); margin-top: 20px;
@@ -527,6 +544,9 @@
     color: var(--mute); margin-bottom: 4px;
   }
   .hours-grid div.off { color: var(--accent); }
+  .hours-grid div.late { color: var(--accent); background: rgba(201, 169, 97, 0.08); }
+  .hours-grid div.late strong { color: var(--accent); }
+  .info-list .value a { color: var(--accent); border-bottom: 1px solid rgba(201, 169, 97, 0.35); }
   .hours-note {
     font-size: 10px; color: var(--mute); letter-spacing: 0.2em;
     text-transform: uppercase; margin-top: 10px;
@@ -564,7 +584,9 @@
   }
   .cta::before {
     content: ""; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at center, rgba(184, 137, 107, 0.25), transparent 60%);
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201, 169, 97, 0.28), transparent 65%),
+      radial-gradient(ellipse 80% 60% at 50% 100%, rgba(196, 167, 224, 0.2), transparent 70%);
   }
   .cta-label {
     font-size: 10px; letter-spacing: 0.3em; color: var(--accent-soft);
@@ -691,7 +713,7 @@
     <li><a href="#info" data-close><span>Info</span><span class="num">N° 06</span></a></li>
   </ul>
   <div class="fullmenu-footer">
-    <div>Tokyo ─ Sangenjaya<br/>10:00-20:00 / Closed Wed・Sun</div>
+    <div>Kanagawa ─ Chuo-Rinkan<br/>Mon-Thu 9:00-18:00 / Fri-Sun 9:00-21:00</div>
     <a href="https://beauty.hotpepper.jp/kr/slnH000593438/" target="_blank" rel="noopener" class="book-btn" data-close>Book Your Ritual →</a>
   </div>
 </div>
@@ -700,7 +722,7 @@
 <section class="hero">
   <div class="hero-meta">
     <div><span class="dot">✦</span>N° 001<br/>Private Salon</div>
-    <div>Tokyo<br/>Sangenjaya</div>
+    <div>Kanagawa<br/>Chuo-Rinkan</div>
   </div>
 
   <div class="hero-main">
@@ -717,7 +739,7 @@
 
   <div class="hero-bottom">
     <div class="scroll-ind"><span>Scroll</span><div class="scroll-line"></div></div>
-    <div>Since 2018</div>
+    <div>Since 2021</div>
   </div>
 </section>
 
@@ -727,11 +749,11 @@
     <span><em>Beauty Acupuncture</em></span><span class="dot">✦</span>
     <span>Autonomic Care</span><span class="dot">✦</span>
     <span><em>Private Room</em></span><span class="dot">✦</span>
-    <span>Tokyo ─ Sangenjaya</span><span class="dot">✦</span>
+    <span>Kanagawa ─ Chuo-Rinkan</span><span class="dot">✦</span>
     <span><em>Beauty Acupuncture</em></span><span class="dot">✦</span>
     <span>Autonomic Care</span><span class="dot">✦</span>
     <span><em>Private Room</em></span><span class="dot">✦</span>
-    <span>Tokyo ─ Sangenjaya</span><span class="dot">✦</span>
+    <span>Kanagawa ─ Chuo-Rinkan</span><span class="dot">✦</span>
   </div>
 </div>
 
@@ -754,13 +776,12 @@
   <h2 class="sec-title reveal">Select your<br/><em>ritual.</em></h2>
 
   <div class="first-offer reveal">
-    <div class="first-offer-tag">First Time Offer</div>
-    <h3>Beauty Acupuncture<br/>First Visit</h3>
-    <div class="sub-jp">初めての方限定・美容鍼 体験コース / 60分</div>
+    <div class="first-offer-tag">Entry Point</div>
+    <h3>Beauty Acupuncture<br/>Basic</h3>
+    <div class="sub-jp">はじめての方に ─ 美容鍼ベーシック / 30分</div>
     <div class="price-line">
-      <del>¥12,000</del>
       <span class="yen">¥</span>
-      <strong>6,600</strong>
+      <strong>5,500</strong>
     </div>
     <a href="https://beauty.hotpepper.jp/kr/slnH000593438/" target="_blank" rel="noopener" class="book-link">
       <span>このコースを予約する</span>
@@ -768,46 +789,69 @@
     </a>
   </div>
 
+  <div class="menu-group-label reveal">Beauty ─ 美容鍼</div>
+
   <div class="menu-card">
     <div class="num">001</div>
-    <div class="title">Beauty Standard</div>
-    <div class="jp-sub">美容鍼 スタンダード</div>
-    <div class="desc">顔と首肩の標準コース。表情筋と血流に丁寧にアプローチ。</div>
-    <div class="time">60 MIN</div>
-    <div class="price">¥12,000</div>
+    <div class="title">Beauty Basic</div>
+    <div class="jp-sub">美容鍼</div>
+    <div class="desc">表情筋と血流に丁寧にアプローチする基本コース。</div>
+    <div class="time">30 MIN</div>
+    <div class="price">¥5,500</div>
   </div>
   <div class="menu-card">
     <div class="num">002</div>
-    <div class="title">Beauty Premium</div>
-    <div class="jp-sub">美容鍼 プレミアム</div>
-    <div class="desc">美容鍼に全身の経絡調整をプラス。肌と身体の両面から整える。</div>
-    <div class="time">90 MIN</div>
-    <div class="price">¥16,500</div>
+    <div class="title">Beauty Electro</div>
+    <div class="jp-sub">美容鍼（電気あり）</div>
+    <div class="desc">低周波の通電でリフトアップと深層への刺激をプラス。</div>
+    <div class="time">45 MIN</div>
+    <div class="price">¥7,700</div>
   </div>
   <div class="menu-card">
     <div class="num">003</div>
-    <div class="title">Autonomic Care</div>
-    <div class="jp-sub">自律神経ケア</div>
-    <div class="desc">不眠・胃腸・気分のゆらぎに。全身の緊張をほどく調整コース。</div>
-    <div class="time">60 MIN</div>
+    <div class="title">Harinezumi</div>
+    <div class="jp-sub">ハリネズミ鍼</div>
+    <div class="desc">顔全体に多数の鍼を打ち、ハリとツヤを引き上げる人気コース。</div>
+    <div class="time">40 MIN</div>
     <div class="price">¥9,900</div>
   </div>
   <div class="menu-card">
     <div class="num">004</div>
-    <div class="title">Body Release</div>
-    <div class="jp-sub">肩こり・腰痛集中</div>
-    <div class="desc">慢性的な身体の硬さに、鍼とお灸を組み合わせて対応。</div>
+    <div class="title">Hojun Chouzame</div>
+    <div class="jp-sub">包潤チョウザメコース</div>
+    <div class="desc">チョウザメ由来の美容液と鍼を組み合わせた贅沢なスペシャルコース。</div>
     <div class="time">50 MIN</div>
+    <div class="price">¥12,000</div>
+  </div>
+
+  <div class="menu-group-label reveal">Body ─ 一般鍼灸</div>
+
+  <div class="menu-card">
+    <div class="num">005</div>
+    <div class="title">Full Body</div>
+    <div class="jp-sub">全身鍼灸</div>
+    <div class="desc">首肩・腰・脚まで全身を整える基本の鍼灸コース。</div>
+    <div class="time">60 MIN</div>
+    <div class="price">¥6,600</div>
+  </div>
+  <div class="menu-card">
+    <div class="num">006</div>
+    <div class="title">Autonomic Care</div>
+    <div class="jp-sub">自律神経コース</div>
+    <div class="desc">不眠・胃腸・気分のゆらぎに。全身の緊張をほどく調整コース。</div>
+    <div class="time">60 MIN</div>
     <div class="price">¥8,800</div>
   </div>
   <div class="menu-card">
-    <div class="num">005</div>
-    <div class="title">Ritual 5 Ticket</div>
-    <div class="jp-sub">美容鍼 5回券（6ヶ月有効）</div>
-    <div class="desc">スタンダード5回分。継続ケアを始めたい方へ。1回¥11,000。</div>
-    <div class="time">× 5</div>
-    <div class="price">¥55,000</div>
+    <div class="num">007</div>
+    <div class="title">Total Care</div>
+    <div class="jp-sub">トータルコース</div>
+    <div class="desc">鍼灸に整体・もみほぐしなどを組み合わせる当院のフルケア。</div>
+    <div class="time">70 MIN</div>
+    <div class="price">¥12,000</div>
   </div>
+
+  <p class="menu-note reveal">その他、整体・もみほぐし・吸い玉・小顔矯正 など、ご相談のうえ組み合わせ可。初診料はいただいておりません。</p>
 </section>
 
 <!-- Ritual -->
@@ -885,21 +929,24 @@
   <div class="info-block reveal">
     <h3>Access</h3>
     <div class="info-list">
-      <div class="row"><div class="label">Address</div><div class="value">〒154-0024<br/>東京都世田谷区三軒茶屋 X-X-X<br/>やすらぎビル 3F</div></div>
-      <div class="row"><div class="label">Station</div><div class="value">東急田園都市線「三軒茶屋駅」徒歩3分</div></div>
-      <div class="row"><div class="label">Tel</div><div class="value">03-XXXX-XXXX</div></div>
-      <div class="row"><div class="label">Mail</div><div class="value">hello@harimyroom.jp</div></div>
+      <div class="row"><div class="label">Address</div><div class="value">神奈川県大和市中央林間 5-7-2<br/>明埜ビル 3階</div></div>
+      <div class="row"><div class="label">Station</div><div class="value">中央林間駅 ─ 小田急線より徒歩2分／東急田園都市線より徒歩5分</div></div>
+      <div class="row"><div class="label">Tel</div><div class="value"><a href="tel:0462087116">046-208-7116</a></div></div>
+      <div class="row"><div class="label">Mail</div><div class="value"><a href="mailto:hari_my_room1001@yahoo.co.jp">hari_my_room1001@yahoo.co.jp</a></div></div>
+      <div class="row"><div class="label">Parking</div><div class="value">専用駐車場なし（近隣コインパーキングあり）</div></div>
+      <div class="row"><div class="label">Opened</div><div class="value">2021年10月</div></div>
+      <div class="row"><div class="label">First Fee</div><div class="value">初診料なし</div></div>
     </div>
     <div class="hours-grid">
-      <div><strong>MON</strong>10-20</div>
-      <div><strong>TUE</strong>10-20</div>
-      <div class="off"><strong>WED</strong>×</div>
-      <div><strong>THU</strong>10-20</div>
-      <div><strong>FRI</strong>10-20</div>
-      <div><strong>SAT</strong>10-20</div>
-      <div class="off"><strong>SUN</strong>×</div>
+      <div><strong>MON</strong>9-18</div>
+      <div><strong>TUE</strong>9-18</div>
+      <div><strong>WED</strong>9-18</div>
+      <div><strong>THU</strong>9-18</div>
+      <div class="late"><strong>FRI</strong>9-21</div>
+      <div class="late"><strong>SAT</strong>9-21</div>
+      <div class="late"><strong>SUN</strong>9-21</div>
     </div>
-    <div class="hours-note">Last Booking 19:00 / By Appointment Only</div>
+    <div class="hours-note">Last Booking Mon-Thu 17:00 / Fri-Sun 20:00 ─ 不定休・完全予約制</div>
   </div>
 
   <div class="info-block reveal">
@@ -931,14 +978,14 @@
 <section class="cta" id="cta">
   <div class="cta-label">✦ Book Your Ritual</div>
   <h2>Your room,<br/><em>is waiting.</em></h2>
-  <p class="cta-sub">初めての方は、<br/>体験コース（¥6,600）からどうぞ。</p>
+  <p class="cta-sub">初めての方は、<br/>美容鍼ベーシック（¥5,500 / 30分）からどうぞ。</p>
   <a href="https://beauty.hotpepper.jp/kr/slnH000593438/" target="_blank" rel="noopener" class="cta-btn">Book Now <span>→</span></a>
 </section>
 
 <!-- Footer -->
 <footer>
   <div class="footer-brand">HARI MY ROOM</div>
-  <p class="tagline">A private acupuncture salon in Tokyo Sangenjaya. Your own room. Your own pace. Your own beauty.</p>
+  <p class="tagline">A private acupuncture salon in Kanagawa Chuo-Rinkan. Your own room. Your own pace. Your own beauty.</p>
   <div class="footer-cols">
     <div>
       <h5>Menu</h5>
@@ -959,13 +1006,13 @@
   </div>
   <div class="footer-bottom">
     <div>© 2026 HARI MY ROOM</div>
-    <div>Tokyo ─ Sangenjaya</div>
+    <div>Kanagawa ─ Chuo-Rinkan</div>
   </div>
 </footer>
 
 <!-- Sticky CTA -->
 <a href="https://beauty.hotpepper.jp/kr/slnH000593438/" target="_blank" rel="noopener" class="sticky-cta">
-  <div class="info-small">Your room is waiting.<small>First visit ¥6,600</small></div>
+  <div class="info-small">Your room is waiting.<small>美容鍼 ¥5,500〜</small></div>
   <span class="book">Book →</span>
 </a>
 
