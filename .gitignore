@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local working images while photographer's shoot is pending
+/12*.jpg

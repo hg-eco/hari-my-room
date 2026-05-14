@@ -806,6 +806,31 @@
       width: 100%;
     }
   }
+
+  /* ========= Accessibility ========= */
+  :focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid var(--lav-deep);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .cta-btn:focus-visible,
+  .book-btn:focus-visible,
+  .book-link:focus-visible,
+  .sticky-cta:focus-visible {
+    outline-color: var(--accent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal, .reveal-img { opacity: 1 !important; transform: none !important; }
+    .marquee-track { animation: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -813,13 +838,13 @@
 <!-- Top nav -->
 <nav class="topnav" id="topnav">
   <div class="brand">HARI MY ROOM</div>
-  <button class="menu-btn" id="menuBtn" aria-label="メニュー">
+  <button class="menu-btn" id="menuBtn" aria-label="メニュー" aria-expanded="false" aria-controls="fullmenu">
     <span></span><span></span>
   </button>
 </nav>
 
 <!-- Full-screen menu -->
-<div class="fullmenu" id="fullmenu">
+<div class="fullmenu" id="fullmenu" aria-hidden="true">
   <ul>
     <li><a href="#concept" data-close><span>想い</span><span class="num">其の一</span></a></li>
     <li><a href="#menu" data-close><span>メニュー</span><span class="num">其の二</span></a></li>
@@ -859,7 +884,7 @@
 </section>
 
 <!-- Marquee -->
-<div class="marquee">
+<div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <span><em>美容鍼</em></span><span class="dot">✦</span>
     <span>自律神経ケア</span><span class="dot">✦</span>
@@ -909,7 +934,7 @@
   <div class="menu-card">
     <div class="num">其の一</div>
     <div class="title">包潤チョウザメコース</div>
-    <div class="desc">チョウザメ由来の美容液と鍼を組み合わせた贅沢なスペシャルコース。電気は別途 ￥3,300。</div>
+    <div class="desc">チョウザメ由来の美容液と鍼を組み合わせた贅沢なスペシャルコース。通電オプション +￥3,300 を追加可能です。</div>
     <div class="time">50分</div>
     <div class="price">￥12,000</div>
   </div>
@@ -923,7 +948,7 @@
   <div class="menu-card">
     <div class="num">其の三</div>
     <div class="title">美顔鍼（電気あり）</div>
-    <div class="desc">低周波の通電でリフトアップと深層への刺激をプラス。</div>
+    <div class="desc">低周波の通電を加え、すっきりとした印象を目指す施術です。</div>
     <div class="time">45分</div>
     <div class="price">￥7,700</div>
   </div>
@@ -947,7 +972,7 @@
   <div class="menu-card">
     <div class="num">其の六</div>
     <div class="title">自律神経コース</div>
-    <div class="desc">不眠・胃腸・気分のゆらぎに。全身の緊張をほどく調整コース。</div>
+    <div class="desc">眠りや胃腸、気分のゆらぎなどのお悩みもご相談ください。全身の緊張をほどく調整コースです。</div>
     <div class="time">60分</div>
     <div class="price">￥8,800</div>
   </div>
@@ -959,7 +984,7 @@
     <div class="price">￥6,600</div>
   </div>
 
-  <p class="menu-note reveal">その他、整体・もみほぐし・吸い玉・小顔矯正 など、ご相談のうえ組み合わせ可。初診料はいただいておりません。</p>
+  <p class="menu-note reveal">表示価格はすべて税込です。その他、整体・もみほぐし・吸い玉・小顔矯正 など、ご相談のうえ組み合わせ可。初診料はいただいておりません。</p>
 </section>
 
 <!-- Ritual -->
@@ -1056,24 +1081,28 @@
   <div class="info-block reveal">
     <h3>よくあるご質問</h3>
     <div class="faq-item">
-      <button class="faq-q"><span class="qmark">問.</span><span class="qtext">鍼は痛くないですか？</span><span class="toggle">＋</span></button>
-      <div class="faq-a">髪の毛ほどの細さの使い捨て鍼のみを使用。「思ったより痛くない」という声が多いです。</div>
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-1"><span class="qmark">問.</span><span class="qtext">鍼は痛くないですか？</span><span class="toggle">＋</span></button>
+      <div class="faq-a" id="faq-1">髪の毛ほどの細さの使い捨て鍼のみを使用。「思ったより痛くない」という声が多いです。</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span class="qmark">問.</span><span class="qtext">施術後すぐメイクできますか？</span><span class="toggle">＋</span></button>
-      <div class="faq-a">少し赤みが出る場合がありますが、メイクは可能です。お直しスペースあり。</div>
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-2"><span class="qmark">問.</span><span class="qtext">施術後すぐメイクできますか？</span><span class="toggle">＋</span></button>
+      <div class="faq-a" id="faq-2">少し赤みが出る場合がありますが、メイクは可能です。お直しスペースあり。</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span class="qmark">問.</span><span class="qtext">通うペースの目安は？</span><span class="toggle">＋</span></button>
-      <div class="faq-a">美容目的なら2週間に1度、体調ケアなら週1回からのスタートをおすすめしています。</div>
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-3"><span class="qmark">問.</span><span class="qtext">通うペースの目安は？</span><span class="toggle">＋</span></button>
+      <div class="faq-a" id="faq-3">美容目的なら2週間に1度、体調ケアなら週1回からのスタートをおすすめしています。状態や目的により異なります。</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span class="qmark">問.</span><span class="qtext">妊娠中の施術は可能？</span><span class="toggle">＋</span></button>
-      <div class="faq-a">お身体の状況により対応が分かれます。ご予約前にご相談ください。</div>
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-4"><span class="qmark">問.</span><span class="qtext">妊娠中の施術は可能？</span><span class="toggle">＋</span></button>
+      <div class="faq-a" id="faq-4">お身体の状況により対応が分かれます。ご予約前にご相談ください。</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q"><span class="qmark">問.</span><span class="qtext">キャンセルポリシー</span><span class="toggle">＋</span></button>
-      <div class="faq-a">前日まで無料。当日キャンセル50%、無断キャンセル100%を頂戴いたします。</div>
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-5"><span class="qmark">問.</span><span class="qtext">施術後に気をつけることはありますか？</span><span class="toggle">＋</span></button>
+      <div class="faq-a" id="faq-5">施術後に一時的な赤み、内出血、だるさなどを感じる場合があります。気になる症状や持病、服薬中の方、妊娠中の方は事前にご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false" aria-controls="faq-6"><span class="qmark">問.</span><span class="qtext">キャンセルポリシー</span><span class="toggle">＋</span></button>
+      <div class="faq-a" id="faq-6">前日まで無料。当日キャンセル50%、無断キャンセル100%を頂戴いたします。</div>
     </div>
   </div>
 </section>
@@ -1130,13 +1159,29 @@
     nav.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  // Hamburger toggle
+  // Hamburger toggle (with aria state sync)
   const menuBtn = document.getElementById('menuBtn');
+  const fullmenu = document.getElementById('fullmenu');
+  const syncMenu = (open) => {
+    menuBtn.setAttribute('aria-expanded', String(open));
+    fullmenu.setAttribute('aria-hidden', String(!open));
+  };
   menuBtn.addEventListener('click', () => {
-    document.body.classList.toggle('menu-open');
+    const open = document.body.classList.toggle('menu-open');
+    syncMenu(open);
   });
   document.querySelectorAll('[data-close]').forEach(el => {
-    el.addEventListener('click', () => document.body.classList.remove('menu-open'));
+    el.addEventListener('click', () => {
+      document.body.classList.remove('menu-open');
+      syncMenu(false);
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+      document.body.classList.remove('menu-open');
+      syncMenu(false);
+      menuBtn.focus();
+    }
   });
 
   // Reveal on scroll
@@ -1145,9 +1190,12 @@
   }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
   document.querySelectorAll('.reveal, .reveal-img').forEach(el => io.observe(el));
 
-  // FAQ
+  // FAQ (with aria-expanded sync)
   document.querySelectorAll('.faq-q').forEach(b => {
-    b.addEventListener('click', () => b.parentElement.classList.toggle('open'));
+    b.addEventListener('click', () => {
+      const isOpen = b.parentElement.classList.toggle('open');
+      b.setAttribute('aria-expanded', String(isOpen));
+    });
   });
 </script>
 
